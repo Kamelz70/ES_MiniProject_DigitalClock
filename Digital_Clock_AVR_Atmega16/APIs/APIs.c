@@ -13,7 +13,7 @@ void PORTS_INIT()
 void TIMER1_INIT()
 {
     TCCR1A = (1 << FOC1A);
-    TCCR1A |= (1 << CS12) | (1 << CS10); //1024 PRESCALAR
+    TCCR1B = (1 << CS12) | (1 << CS10)|(1<<WGM12); //1024 PRESCALAR AND CTC MODE ENABLE
 
     /*
 NON PWM MODE ->FOC1A

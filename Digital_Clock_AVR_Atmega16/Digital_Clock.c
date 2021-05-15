@@ -5,10 +5,11 @@
  *      Author: moham
  */
 #define F_CPU 1000000
+/////////////////////////////////////
 #include <avr/io.h>
-
 #include <avr/interrupt.h>
 #include "util/delay.h"
+///////////////////////////////////////
 typedef struct time
 {
 	unsigned short S; //seconds
@@ -18,11 +19,10 @@ typedef struct time
 
 time T;
 unsigned char TICK1_FLAG = 0;
+////////////////////////////////////
 int main()
 {
-	T.S = 0;
-	T.M = 0;
-	T.H = 0;
+
 	TIMER1_INIT();
 	INT1_INIT();
 	INT0_INIT();
@@ -31,7 +31,9 @@ int main()
 	SREG |= (1 << 7); //ENABLE GLOBAL INTERRUPT
 
 	unsigned char i = 0;
-
+	T.S = 0;
+		T.M = 0;
+		T.H = 0;
 	while (1)
 	{
 		///update time if tick occurred
@@ -66,7 +68,7 @@ int main()
 				PORTC = (PORTC & 0XF0) | ((T.S % 10) & 0x0F);//first digit on seconds on first 7-seg
 				break;
 			case 1:
-				PORTC = (PORTC & 0XF0) | ((T.S / 10) & 0x0F);//second digit on seconds on first 7-seg
+				PORTC = (PORTC & 0XF0) | ((T.S / 10) & 0x0F);//second digit on seconds on second 7-seg
 				break;
 			case 2:
 				PORTC = (PORTC & 0XF0) | ((T.M % 10) & 0x0F);//same continues
@@ -81,11 +83,11 @@ int main()
 				PORTC = (PORTC & 0XF0) | ((T.H / 10) & 0x0F);
 				break;
 			}
-			_delay_ms(5);
+			_delay_ms(6);
 		}
 	}
 }
-
+//////////////////////////////////////////////ISRS
 ISR(INT0_vect)
 {
 	//reset clock
@@ -97,12 +99,16 @@ ISR(INT0_vect)
 ISR(INT2_vect)
 {
 	//resume the stop watch.
-	TICK1_FLAG = 1;
+	 TCCR1B |= ((1 << CS12) | (1 << CS10));
+
+	
 }
 ISR(INT1_vect)
 {
-	TICK1_FLAG = 1;
 	////pause stopwatch
+	 TCCR1B &= ~((1 << CS12) | (1 << CS10));
+
+	 //DISABLE CLOCK SOURCE
 }
 ISR(TIMER1_COMPA_vect)
 {

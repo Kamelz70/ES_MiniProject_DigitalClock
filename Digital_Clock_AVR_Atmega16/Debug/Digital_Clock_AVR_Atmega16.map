@@ -150,7 +150,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x1166
+.text           0x00000000     0x1182
  *(.vectors)
  .vectors       0x00000000       0x54 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm16.o
                 0x00000000                __vectors
@@ -256,48 +256,48 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
                 0x00000b46                . = ALIGN (0x2)
  *(.text.*)
  .text.PORTS_INIT
-                0x00000b46       0x54 ./APIs/APIs.o
+                0x00000b46       0x46 ./APIs/APIs.o
                 0x00000b46                PORTS_INIT
  .text.TIMER1_INIT
-                0x00000b9a       0x46 ./APIs/APIs.o
-                0x00000b9a                TIMER1_INIT
+                0x00000b8c       0x40 ./APIs/APIs.o
+                0x00000b8c                TIMER1_INIT
  .text.INT0_INIT
-                0x00000be0       0x54 ./APIs/APIs.o
-                0x00000be0                INT0_INIT
+                0x00000bcc       0x54 ./APIs/APIs.o
+                0x00000bcc                INT0_INIT
  .text.INT1_INIT
-                0x00000c34       0x46 ./APIs/APIs.o
-                0x00000c34                INT1_INIT
+                0x00000c20       0x46 ./APIs/APIs.o
+                0x00000c20                INT1_INIT
  .text.INT2_INIT
-                0x00000c7a       0x46 ./APIs/APIs.o
-                0x00000c7a                INT2_INIT
- .text.main     0x00000cc0      0x356 ./Digital_Clock.o
-                0x00000cc0                main
+                0x00000c66       0x46 ./APIs/APIs.o
+                0x00000c66                INT2_INIT
+ .text.main     0x00000cac      0x356 ./Digital_Clock.o
+                0x00000cac                main
  .text.__vector_1
-                0x00001016       0x38 ./Digital_Clock.o
-                0x00001016                __vector_1
+                0x00001002       0x38 ./Digital_Clock.o
+                0x00001002                __vector_1
  .text.__vector_18
-                0x0000104e       0x2a ./Digital_Clock.o
-                0x0000104e                __vector_18
+                0x0000103a       0x42 ./Digital_Clock.o
+                0x0000103a                __vector_18
  .text.__vector_2
-                0x00001078       0x2a ./Digital_Clock.o
-                0x00001078                __vector_2
+                0x0000107c       0x42 ./Digital_Clock.o
+                0x0000107c                __vector_2
  .text.__vector_6
-                0x000010a2       0x2a ./Digital_Clock.o
-                0x000010a2                __vector_6
- .text.libgcc   0x000010cc       0x28 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
-                0x000010cc                __udivmodhi4
- .text.libgcc   0x000010f4        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x000010f4        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc   0x000010f4       0x38 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
-                0x000010f4                __prologue_saves__
- .text.libgcc   0x0000112c       0x36 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
-                0x0000112c                __epilogue_restores__
- .text.libgcc   0x00001162        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
-                0x00001162                . = ALIGN (0x2)
+                0x000010be       0x2a ./Digital_Clock.o
+                0x000010be                __vector_6
+ .text.libgcc   0x000010e8       0x28 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                0x000010e8                __udivmodhi4
+ .text.libgcc   0x00001110        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00001110        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00001110       0x38 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
+                0x00001110                __prologue_saves__
+ .text.libgcc   0x00001148       0x36 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+                0x00001148                __epilogue_restores__
+ .text.libgcc   0x0000117e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                0x0000117e                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00001162        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x00001162                exit
-                0x00001162                _exit
+ .fini9         0x0000117e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x0000117e                exit
+                0x0000117e                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -316,11 +316,11 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00001162        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .fini0         0x0000117e        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00001166                _etext = .
+                0x00001182                _etext = .
 
-.data           0x00800060        0x8 load address 0x00001166
+.data           0x00800060        0x8 load address 0x00001182
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm16.o
@@ -383,8 +383,8 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  COMMON         0x00800069        0x6 ./Digital_Clock.o
                 0x00800069                T
                 0x0080006f                PROVIDE (__bss_end, .)
-                0x00001166                __data_load_start = LOADADDR (.data)
-                0x0000116e                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00001182                __data_load_start = LOADADDR (.data)
+                0x0000118a                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x0080006f        0x0
                 0x0080006f                PROVIDE (__noinit_start, .)
@@ -409,10 +409,10 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .signature
  *(.signature*)
 
-.stab           0x00000000      0x918
+.stab           0x00000000      0x90c
  *(.stab)
- .stab          0x00000000      0x498 ./APIs/APIs.o
- .stab          0x00000498      0x480 ./Digital_Clock.o
+ .stab          0x00000000      0x48c ./APIs/APIs.o
+ .stab          0x0000048c      0x480 ./Digital_Clock.o
                                 0x63c (size before relaxing)
 
 .stabstr        0x00000000      0x82c
